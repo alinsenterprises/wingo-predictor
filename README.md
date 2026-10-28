@@ -1,6 +1,6 @@
 # Wingo Prediction Analyzer — dmfirst1.com
 
-> **Public repository note:** Live credentials, private SSH keys, runtime user/payment data, logs, snapshots, Git history, virtual environments, browser binaries, and nested backup archives are excluded from this source copy. Set credentials locally from `env.example`; never commit live values.
+> **Repository hygiene note:** Live credentials, private SSH keys, runtime user/payment data, logs, snapshots, Git history, virtual environments, browser binaries, and nested backup archives are excluded from this source copy. Set credentials locally from `env.example`; never commit live values.
 >
 > WinGo results are random or pseudorandom. The analysis and confidence scores do not guarantee future outcomes; do not use them for real-money gambling decisions.
 
