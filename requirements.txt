@@ -1,2 +1,16 @@
-pandas
-requests
+# Wingo Prediction Analyzer - direct dependencies
+# Python 3.10+
+
+# HTTP calls to the dmfirst result/issue endpoints (signed JSON POSTs)
+requests>=2.31,<3
+# Telegram bot: long polling, inline keyboards, message editing, photo upload
+python-telegram-bot>=21,<24
+# Snapshot cards rendered to PNG (signal cards + result boards)
+pillow>=10,<13
+# UPI payment QR codes rendered into the Telegram chat
+qrcode>=7,<9
+
+# Optional extras (not installed by default):
+#   playwright   -> browser-head transport, only needed when TRANSPORT=browser
+#   beautifulsoup4 -> HTML table fallback, only needed when DMFIRST_RESULTS_MODE=html
+pandas>=2.0,<4

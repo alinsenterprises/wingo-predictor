@@ -1,0 +1,34 @@
+# Secrets and local keys
+.env
+.env.*
+.ssh/
+**/.ssh/
+*.pem
+*.ppk
+*.key
+*.p12
+*.pfx
+*.pub
+clear
+clear.pub
+
+# Runtime data
+data/
+logs/
+snapshots/
+*.log
+*.db
+*.db-wal
+*.db-shm
+
+# Local environments and generated files
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+.playwright-browsers/
+.git/
+*.tar.gz
+*.zip
+.DS_Store

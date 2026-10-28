@@ -1,0 +1,37 @@
+# Template: deploy/install-lightsail.sh substitutes %APP_DIR% / %SERVICE_USER%
+# and installs the result as /etc/systemd/system/wingo-analyzer.service.
+# Do not install this file verbatim.
+[Unit]
+Description=Wingo prediction analyzer for dmfirst1.com
+Documentation=file:///opt/wingo-analyzer/README.md
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=%SERVICE_USER%
+WorkingDirectory=%APP_DIR%
+# KEY=VALUE file created by deploy/install-lightsail.sh from env.example
+EnvironmentFile=-%APP_DIR%/.env
+ExecStart=%APP_DIR%/.venv/bin/python -m wingo_analyzer run
+
+# Run continuously: restart on any exit (crash, OOM, host reboot handled by systemd)
+Restart=always
+RestartSec=5
+StartLimitIntervalSec=0
+
+# Give the poller time to finish its last cycle before SIGKILL
+TimeoutStopSec=30
+KillSignal=SIGTERM
+
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=wingo-analyzer
+
+# Light hardening
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectHome=true
+
+[Install]
+WantedBy=multi-user.target

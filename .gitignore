@@ -1,5 +1,54 @@
-wingo_data.csv
-__pycache__/
-*.py[cod]
+.env
+.env.local
+*.log
+.DS_Store
+
+# Python
 .venv/
 venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+
+# Runtime data (dataset + rotating logs + photos)
+data/
+logs/
+snapshots/
+.playwright-browsers/
+*.db
+*.db-wal
+*.db-shm
+
+# Credentials and local keys
+.env
+.env.*
+!.env.example
+env.local
+.ssh/
+**/.ssh/
+*.pem
+*.ppk
+*.key
+*.p12
+*.pfx
+*.pub
+clear
+clear.pub
+
+# Local runtime state and generated artifacts
+data/
+logs/
+snapshots/
+*.log
+*.db
+*.db-wal
+*.db-shm
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+.playwright-browsers/
+*.tar.gz
+*.zip
+.DS_Store
